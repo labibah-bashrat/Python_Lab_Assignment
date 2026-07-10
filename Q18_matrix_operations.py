@@ -2,26 +2,31 @@
 
 matrix = []
 
-# Input matrix values
 for i in range(3):
-    row = list(map(int, input("Enter row values: ").split()))
+    row = list(map(int, input("Enter 3 values for row: ").split()))
+
+    while len(row) != 3:
+        print("Please enter exactly 3 values.")
+        row = list(map(int, input("Enter 3 values for row: ").split()))
+
     matrix.append(row)
 
 
-# Calculate row sums
+print("Row sums:")
+
 for row in matrix:
-    print("Row sum:", sum(row))
+    print(sum(row))
 
 
-# Calculate column sums
+print("Column sums:")
+
 for column in range(3):
     total = 0
 
     for row in range(3):
         total += matrix[row][column]
 
-    print("Column sum:", total)
+    print(total)
 
 
-# Calculate total matrix sum
 print("Total sum:", sum(map(sum, matrix)))
