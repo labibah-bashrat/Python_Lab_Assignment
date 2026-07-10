@@ -1,18 +1,24 @@
-marks=[]
+# Analyze marks of 10 students
 
+marks = []
+
+# Store student marks
 for i in range(10):
-    marks.append(int(input("Mark: ")))
+    mark = int(input("Enter mark: "))
+    marks.append(mark)
 
-average=sum(marks)/10
 
-count=0
+average = sum(marks) / len(marks)
 
+above_average = 0
+
+# Count students scoring above average
 for mark in marks:
-    if mark>average:
-        count+=1
+    if mark > average:
+        above_average += 1
 
 
-print("Highest:",max(marks))
-print("Lowest:",min(marks))
-print("Average:",average)
-print("Above average:",count)
+print("Highest mark:", max(marks))
+print("Lowest mark:", min(marks))
+print("Average mark:", average)
+print("Students above average:", above_average)
